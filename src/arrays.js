@@ -1,61 +1,81 @@
 const getNthElement = (index, array) => {
-  // your code here
+  return array.length > index ? array[index] : array[index - array.length];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return array.join(',');
 };
 
 const csvStringToArray = string => {
-  // your code here
+  return string.split(',');
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  return [...array, element];
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.map(number => String(number));
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => string.toUpperCase());
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  const reverseArray = [];
+  strings.forEach(string =>
+    reverseArray.push(
+      string
+        .split('')
+        .reverse()
+        .join('')
+    )
+  );
+  return reverseArray;
 };
 
 const onlyEven = numbers => {
-  // your code here
+  return numbers.filter(number => number % 2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  const copyArray = array.slice();
+  copyArray.splice(index, 1);
+  return copyArray;
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  return strings.filter(filterWord =>
+    ['a', 'e', 'i', 'o', 'u'].includes(filterWord[0].toLowerCase())
+  );
 };
 
 const removeSpaces = string => {
-  // your code here
+  return string.split(' ').join('');
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  return numbers.reduce((sum, cur) => sum + cur);
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  return strings.sort((a, b) => {
+    if (a.slice(-1) < b.slice(-1)) {
+      return -1;
+    }
+    if (a.slice(-1) > b.slice(-1)) {
+      return 1;
+    }
+  });
 };
 
 module.exports = {
