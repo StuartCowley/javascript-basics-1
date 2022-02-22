@@ -30,6 +30,9 @@ const getAges = people => {
 
 const findByName = (name, people) => {
   // Return object with person.name that matches name String that's passed in using array filter method
+  // 01
+  // return people.filter(person => person.name === name)[0];
+  // 02
   return people.filter(person => person.name === name).pop();
 };
 

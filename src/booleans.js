@@ -19,6 +19,9 @@ function one(a, b) {
 }
 
 function truthiness(a) {
+  // 01
+  // return a ? true : false;
+  // 02
   return !!a;
 }
 
