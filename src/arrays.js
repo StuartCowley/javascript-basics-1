@@ -1,9 +1,9 @@
 const getNthElement = (index, array) => {
   // return the element at a given position if the index > array.length, else return the element at the start
   // 01
-  // return array.length > index ? array[index] : array
+  // return array.length > index ? array[index] : array[index - array.length];
   // 02
-  return array[index - array.length];
+  return array[index % array.length];
 };
 
 const arrayToCSVString = array => {
@@ -94,14 +94,19 @@ const sumNumbers = numbers => {
 
 const sortByLastLetter = strings => {
   // sort the string elements in the array by the last letter of the element
-  return strings.sort((a, b) => {
-    if (a.slice(-1) < b.slice(-1)) {
-      return -1;
-    }
-    if (a.slice(-1) > b.slice(-1)) {
-      return 1;
-    }
-  });
+  // 01
+  // return strings.sort((a, b) => {
+  //   if (a.slice(-1) < b.slice(-1)) {
+  //     return -1;
+  //   }
+  //   if (a.slice(-1) > b.slice(-1)) {
+  //     return 1;
+  //   }
+  // });
+  // 02
+  return strings.sort(
+    (a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)
+  );
 };
 
 module.exports = {
