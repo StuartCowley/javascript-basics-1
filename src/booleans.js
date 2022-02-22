@@ -19,7 +19,7 @@ function one(a, b) {
 }
 
 function truthiness(a) {
-  return a ? true : false;
+  return !!a;
 }
 
 function isEqual(a, b) {
@@ -47,35 +47,34 @@ function isSquare(a) {
 }
 
 function startsWith(char, string) {
-  return string[0] === char ? true : false;
+  return string[0] === char;
 }
 
 function containsVowels(string) {
-  const stringLower = string.toLowerCase();
-  for (let i = 0; i <= string.length; i += 1) {
-    if (
-      stringLower[i] === 'a' ||
-      stringLower[i] === 'e' ||
-      stringLower[i] === 'i' ||
-      stringLower[i] === 'o' ||
-      stringLower[i] === 'u'
-    ) {
-      return true;
-    }
-  }
-  return false;
+  // 01
+  // const stringLower = string.toLowerCase();
+  // for (let i = 0; i <= string.length; i += 1) {
+  //   if (
+  //     stringLower[i] === 'a' ||
+  //     stringLower[i] === 'e' ||
+  //     stringLower[i] === 'i' ||
+  //     stringLower[i] === 'o' ||
+  //     stringLower[i] === 'u'
+  //   ) {
+  //     return true;
+  //   }
+  // }
+  // return false;
+  // 02
+  return ['a', 'e', 'i', 'o', 'u'].some(vowel =>
+    string.toLowerCase().includes(vowel)
+  );
 }
 
-console.log(containsVowels('aat'));
-console.log(containsVowels('dgg'));
-
 function isLowerCase(string) {
-  // your code here
   const stringLower = string.toLowerCase();
   for (let i = 0; i <= string.length; i += 1) {
-    if (string[i] !== stringLower[i]) {
-      return false;
-    }
+    if (string[i] !== stringLower[i]) return false;
   }
   return true;
 }
