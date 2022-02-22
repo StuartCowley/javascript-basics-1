@@ -43,11 +43,27 @@ const findHondas = cars => {
 
 const averageAge = people => {
   // Return the average of the passed in people objects property using the array reduce method
-  return people.reduce((sum, acc) => sum + acc.age, 0) / people.length;
+  // 01
+  // return people.reduce((sum, acc) => sum + acc.age, 0) / people.length;
+  // 02
+  return people.reduce(
+    (sum, acc, _, arr) => sum + Math.trunc(acc.age / arr.length),
+    0
+  );
 };
 
 const createTalkingPerson = (name, age) => {
   // Return object with name, age properties and an introduce method
+  // 01
+  // function introduce(yourName) {
+  //   return `Hi ${yourName}, my name is ${this.name} and I am ${this.age}!`;
+  // }
+  // return {
+  //   name,
+  //   age,
+  //   introduce
+  // };
+  // 02
   return {
     name,
     age,
