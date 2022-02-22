@@ -40,16 +40,24 @@ const uppercaseWordsInArray = strings => {
 
 const reverseWordsInArray = strings => {
   // return an array with the string elements reversed
-  const reverseArray = [];
-  strings.forEach(string =>
-    reverseArray.push(
-      string
-        .split('')
-        .reverse()
-        .join('')
-    )
+  // 01
+  // const reverseArray = [];
+  // strings.forEach(string =>
+  //   reverseArray.push(
+  //     string
+  //       .split('')
+  //       .reverse()
+  //       .join('')
+  //   )
+  // );
+  // return reverseArray;
+  // 02
+  return strings.map(string =>
+    string
+      .split('')
+      .reverse()
+      .join('')
   );
-  return reverseArray;
 };
 
 const onlyEven = numbers => {
