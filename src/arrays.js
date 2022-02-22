@@ -1,6 +1,9 @@
 const getNthElement = (index, array) => {
   // return the element at a given position if the index > array.length, else return the element at the start
-  return array.length > index ? array[index] : array[index - array.length];
+  // 01
+  // return array.length > index ? array[index] : array
+  // 02
+  return array[index - array.length];
 };
 
 const arrayToCSVString = array => {
