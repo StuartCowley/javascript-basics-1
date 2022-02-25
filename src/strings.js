@@ -1,26 +1,32 @@
-function sayHello (string) {
-  // your code here
-};
+function sayHello(string) {
+  // Return string passing in 'string' argument into template literal
+  return `Hello, ${string}!`;
+}
 
-function uppercase (string) {
-  // your code here
-};
+function uppercase(string) {
+  // Return uppercase string using toUpperCase String method
+  return string.toUpperCase();
+}
 
-function lowercase (string) {
-  // your code here
-};
+function lowercase(string) {
+  // Return lowercase string using toLowerCase String method
+  return string.toLowerCase();
+}
 
-function countCharacters (string) {
-  // your code here
-};
+function countCharacters(string) {
+  // Return lowercase string using toLowerCase String method
+  return string.length;
+}
 
-function firstCharacter (string) {
-  // your code here
-};
+function firstCharacter(string) {
+  // return the character at index 0 of the string that's passed in
+  return string[0];
+}
 
-function firstCharacters (string, n) {
-  // your code here
-};
+function firstCharacters(string, n) {
+  // return characters from index 0 to index n that's passed in
+  return string.slice(0, n);
+}
 
 module.exports = {
   sayHello,

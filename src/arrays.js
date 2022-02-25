@@ -1,61 +1,112 @@
 const getNthElement = (index, array) => {
-  // your code here
+  // return the element at a given position if the index > array.length, else return the element at the start
+  // 01
+  // return array.length > index ? array[index] : array[index - array.length];
+  // 02
+  return array[index % array.length];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  // return a string based on a "," delimeter
+  return array.join(',');
 };
 
 const csvStringToArray = string => {
-  // your code here
+  // return an array by splitting a string based on a "," delimeter
+  return string.split(',');
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  // append element to an array
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  // return array unpacking array and appending element
+  return [...array, element];
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  // remove an element at the index param position
+  array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  // return an array converting the elements to string
+  return numbers.map(number => String(number));
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  // return an array with the strings converted to upper case
+  return strings.map(string => string.toUpperCase());
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  // return an array with the string elements reversed
+  // 01
+  // const reverseArray = [];
+  // strings.forEach(string =>
+  //   reverseArray.push(
+  //     string
+  //       .split('')
+  //       .reverse()
+  //       .join('')
+  //   )
+  // );
+  // return reverseArray;
+  // 02
+  return strings.map(string =>
+    string
+      .split('')
+      .reverse()
+      .join('')
+  );
 };
 
 const onlyEven = numbers => {
-  // your code here
+  // return an array with only even numbers filterd from the numbers param
+  return numbers.filter(number => number % 2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  // return array with the nth element removed, without mutating original
+  const copyArray = array.slice();
+  copyArray.splice(index, 1);
+  return copyArray;
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  // return array only with elements that start with a vowel
+  return strings.filter(filterWord =>
+    ['a', 'e', 'i', 'o', 'u'].includes(filterWord[0].toLowerCase())
+  );
 };
 
 const removeSpaces = string => {
-  // your code here
+  // return string with spaces removed from original string param
+  return string.split(' ').join('');
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  // return sum of the number elements in the array
+  return numbers.reduce((sum, cur) => sum + cur);
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  // sort the string elements in the array by the last letter of the element
+  // 01
+  // return strings.sort((a, b) => {
+  //   if (a.slice(-1) < b.slice(-1)) {
+  //     return -1;
+  //   }
+  //   if (a.slice(-1) > b.slice(-1)) {
+  //     return 1;
+  //   }
+  // });
+  // 02
+  return strings.sort(
+    (a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)
+  );
 };
 
 module.exports = {

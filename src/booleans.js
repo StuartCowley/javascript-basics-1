@@ -1,62 +1,86 @@
 function negate(a) {
-  // your code here
-};
+  return !a;
+}
 
 function both(a, b) {
-  // your code here
-};
+  return a && b;
+}
 
 function either(a, b) {
-  // your code here
-};
+  return a || b;
+}
 
 function none(a, b) {
-  // your code here
-};
+  return !a && !b;
+}
 
 function one(a, b) {
-  // your code here
-};
+  return a !== b;
+}
 
 function truthiness(a) {
-  // your code here
-};
+  // 01
+  // return a ? true : false;
+  // 02
+  return !!a;
+}
 
 function isEqual(a, b) {
-  // your code here
-};
+  return a === b;
+}
 
 function isGreaterThan(a, b) {
-  // your code here
-};
+  return a > b;
+}
 
 function isLessThanOrEqualTo(a, b) {
-  // your code here
-};
+  return a <= b;
+}
 
 function isOdd(a) {
-  // your code here
-};
+  return a % 2 !== 0;
+}
 
 function isEven(a) {
-  // your code here
-};
+  return a % 2 === 0;
+}
 
 function isSquare(a) {
-  // your code here
-};
+  return Math.sqrt(a) % 1 === 0;
+}
 
 function startsWith(char, string) {
-  // your code here
-};
+  return string[0] === char;
+}
 
 function containsVowels(string) {
-  // your code here
-};
+  // 01
+  // const stringLower = string.toLowerCase();
+  // for (let i = 0; i <= string.length; i += 1) {
+  //   if (
+  //     stringLower[i] === 'a' ||
+  //     stringLower[i] === 'e' ||
+  //     stringLower[i] === 'i' ||
+  //     stringLower[i] === 'o' ||
+  //     stringLower[i] === 'u'
+  //   ) {
+  //     return true;
+  //   }
+  // }
+  // return false;
+  // 02
+  return ['a', 'e', 'i', 'o', 'u'].some(vowel =>
+    string.toLowerCase().includes(vowel)
+  );
+}
 
 function isLowerCase(string) {
-  // your code here
-};
+  const stringLower = string.toLowerCase();
+  for (let i = 0; i <= string.length; i += 1) {
+    if (string[i] !== stringLower[i]) return false;
+  }
+  return true;
+}
 
 module.exports = {
   negate,
